@@ -1,0 +1,246 @@
+/* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * You may explicitly copy and modify this stylesheet and include it into your project. */
+body {
+  font-family: var(--font);
+  background: var(--col-bg);
+}
+:not(input):not(textarea):not(select) {
+  color: var(--col-text);
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+textarea {
+  resize: vertical;
+  /* workaround for right alignment in FF */
+  /* padding-right: 2px; */
+  min-height: 2em;
+  max-height: 20em;
+}
+button {
+  background: var(--col-button);
+  border-color: var(--col-border);
+  width: max-content;
+  min-width: 6em;
+  font-size: inherit;
+  padding: 0.25em;
+}
+button[role=menuitem] {
+  border-radius: 0;
+}
+:focus {
+  outline: none;
+  box-shadow: 0 0 1em var(--col-focus);
+  border-color: var(--col-focus);
+}
+::-moz-focus-inner {
+  border-style: none;
+}
+:invalid, .invalid {
+  border-color: var(--col-invalid);
+}
+input, textarea, select, button {
+  border-radius: var(--radius);
+}
+[readonly] {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none !important;
+  color: #000000;
+}
+.ui-prefix {
+  background: var(--col-info);
+  border-color: var(--col-border);
+  padding: 4px 4px 4px 8px;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+.ui-suffix {
+  background: var(--col-info);
+  border-color: var(--col-border);
+  padding: 4px 8px 4px 4px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.with-prefix {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.with-suffix {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+ui-icon {
+  font-family: 'FontAwesome';
+  font-weight: 900;
+}
+.error:before {
+  color: var(--col-error);
+  content: var(--ico-error);
+}
+.warning:before {
+  color: var(--col-warning);
+  content: var(--ico-warning);
+}
+.information:before {
+  color: var(--col-info);
+  content: var(--ico-info);
+}
+.question:before {
+  color: var(--col-info);
+  content: var(--ico-question);
+}
+.expand:before {
+  content: var(--ico-expand);
+}
+.collapse:before {
+  content: var(--ico-collapse);
+}
+.danger {
+  background: var(--col-danger);
+}
+.submit {
+  background: var(--col-submit);
+}
+.abort {
+  background: var(--col-abort);
+}
+ui-vpanel {
+  display: flex;
+  flex-direction: column;
+}
+ui-hpanel {
+  display: flex;
+  flex-direction: row;
+}
+ui-buttons {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+ui-buttons>* {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+ui-radio {
+  margin-right: 0.5em;
+}
+ui-radio>input[type=radio] {
+    vertical-align: middle;
+    margin-top: -0.4em;
+    margin-right: 0.2em;
+}
+fieldset.collapsible>legend,
+fieldset.collapsible>legend>* {
+  cursor: pointer;
+}
+legend>*, ui-tabs>button>* {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.hidden, fieldset.collapsed>:not(legend) {
+  display:none;
+}
+ui-slider>output {
+  border: 1px solid var(--col-text);
+  margin-left: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+ui-tabs {
+	display: inline-flex;
+}
+ui-tabs>button {
+  padding: 0.2em;
+  border: solid;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-width: 1px;
+  border-color: var(--col-border);
+  cursor: pointer;
+  text-overflow: ellipsis;
+  background: var(--col-tab);
+}
+ui-tabs>button[aria-selected=true] {
+  font-weight: bold;
+  border-bottom-width: 0;
+  background: var(--col-active);
+}
+ui-tabpanel>ui-tabcontent {
+  display: block;
+  border: solid;
+  border-width: 0 1px 1px 1px;
+  border-color: var(--col-border);
+  background: var(--col-active);
+  padding: 0.5em;
+}
+ui-content {
+  white-space: nowrap;
+}
+ui-content>* {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+ui-content>aside {
+  margin-right: 1em;
+}
+ui-content>main {
+  width: 91.5%;
+}
+table.ui-data {
+  width: 100%;
+  border-spacing: 0;
+  border: 2px solid black;
+}
+table.ui-data thead, table.ui-data tbody {
+  display: block;
+}
+
+table.ui-data thead tr {
+  width: 97%;
+  width: -webkit-calc(100% - 16px);
+  width:    -moz-calc(100% - 16px);
+  width:         calc(100% - 16px);
+}
+table.ui-data tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+table.ui-data tbody {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+table.ui-data tbody td,
+table.ui-data thead th {
+  width: 19%;
+  float: left;
+  border-right: 1px solid black;
+}
+thead tr th { 
+  height: 30px;
+  line-height: 30px;
+}
+tbody {
+  counter-reset: rowNumber;
+  border-top: 2px solid black;
+}
+tbody tr {
+  counter-increment: rowNumber;
+}
+tbody td:last-child, thead th:last-child {
+  border-right: none !important;
+}
+tbody td.rownum::before {
+  content: counter(rowNumber, decimal-leading-zero);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
